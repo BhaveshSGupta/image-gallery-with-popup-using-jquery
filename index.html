@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>easy part 2</title>
+  <!-- <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8"> -->
+  <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#tab1").click(function() {
+        $(".img1").toggleClass("dark");
+      });
+      $("#tab2").click(function() {
+        $(".img2").toggleClass("dark");
+      });
+      $("#tab3").click(function() {
+        $(".img3").toggleClass("dark");
+      });
+      $("#all").click(function() {
+        $(".img3,.img2,.img1").addClass("dark");
+      });
+      $(".img1,.img2,.img3").click(function() {
+        if ($(this).hasClass("dark")) {
+
+        } else {
+          $('.popup').toggle();
+          $ab = (this).getAttribute('src');
+          $("#1,#2").toggleClass("dark");
+          $(".imgdsp").attr('src', $ab);
+        }
+      });
+      $(".btn").click(function() {
+        $(".popup").hide();
+        $("#1,#2").toggleClass("dark");
+      });
+
+    });
+  </script>
+  <style media="screen">
+    .fl,
+    ul>li {
+      float: left;
+    }
+
+    ul>li {
+      margin: 50px;
+      padding: 20px;
+      background: lightblue
+    }
+
+    .dark {
+      opacity: 0.1
+    }
+
+    .popup {
+      width: 250px;
+      height: 250px;
+      /*background-color: red;*/
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body style="width:1200px;margin:0 auto;">
+  <div style="width:1200px;" id="1">
+    <ul style="float:none">
+      <li id="tab1">tab1</li>
+      <li id="tab2">tab2</li>
+      <li id="tab3">tab3</li>
+      <li id="all">all</li>
+    </ul>
+  </div>
+  <div style="min-width:1200px;" id="2">
+
+    <img class="img1" src="image/image1.png" alt="img1" />
+
+    <img class="img2" src="image/image2.png" alt="img2" />
+    <img class="img3" src="image/image3.png" alt="img3" />
+    <img class="img1" src="image/image1.png" alt="img1" />
+    <img class="img2" src="image/image2.png" alt="img2" />
+    <img class="img3" src="image/image3.png" alt="img3" />
+  </div>
+  <div class="popup">
+    <button class="btn" style="float:right">close</button>
+    <img class="imgdsp" />
+  </div>
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
+</body>
+
+</html>
